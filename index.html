@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rachuonyo County Hospital </title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <h1>Rachuonyo County Hospital level 4 </h1>
+  <p>Quality Care • Trusted Service • Healthy Community</p>
+</header>
+
+<nav>
+  <a href="#">Home</a>
+  <a href="#services">Services</a>
+  <a href="#about">About</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<section class="hero">
+  <h2>Your Health, Our Priority</h2>
+  <button onclick="showAlert()">Book Appointment</button>
+</section>
+!-- Link CSS to browser -->
+  <link rel="stylesheet" href="style.css">
+<section id="services" class="section">
+  <h2>Our Services</h2>
+  <ul>
+    <li>Outpatient & Inpatient Care</li>
+    <li>Maternity & Linda Mama</li>
+    <li>Laboratory & Pharmacy</li>
+    <li>Emergency Services</li>
+    <li>linda mama and clinic <booking></booking>
+      <!--Tab to edit-->
+    </tag>
+    
+  </ul>
+</section>
+
+<section id="about" class="section">
+  <h2>About Us</h2>
+  <p>Rachuonyo County Hospital is committed to providing quality healthcare services to the community.</p>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact Us</h2>
+  <form onsubmit="sendMessage(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</section>
+
+<footer>
+  <p>&copy; 2026 Rachuonyo County Hospital</p>
+</footer>
+<script>
+document.getElementById("appointmentForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  const data = {
+    name: document.getElementById("name").value,
+    phone: document.getElementById("phone").value,
+    email: document.getElementById("email").value,
+    date: document.getElementById("date").value,
+    service: document.getElementById("service").value
+  };
+
+  const res = await fetch("http://localhost:5000/api/appointments", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data)
+  });
+
+  const result = await res.json();
+  alert(result.message);
+});
+</script>
+<script src="script.js"></script>
+</body>
+</html>

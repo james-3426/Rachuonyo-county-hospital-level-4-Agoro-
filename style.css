@@ -1,0 +1,39 @@
+body {
+  margin: 0;
+  font-family: verdana, sans-serif;
+  background: #f4f8fb;
+}
+
+header {
+  background: #0057b7;
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+nav {
+  background: #003f88;
+  text-align: center;
+  padding: 10px;
+}
+
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.hero {
+  background: #e3f2fd;
+  padding: 40px;
+  text-align: center;
+}
+
+.hero button {
+  padding: 10px 20px;
+  background: #0057b7;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
